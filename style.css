@@ -1,0 +1,3019 @@
+/* =========================================
+   VISHNU THUNDERS DANCE STUDIO
+   MAIN STYLESHEET
+========================================= */
+
+:root {
+
+    --black: #080808;
+    --dark: #101010;
+    --dark-card: #171717;
+
+    --white: #ffffff;
+    --light: #f5f5f5;
+    --gray: #999999;
+    --border: #292929;
+
+    --accent: #ff3d81;
+    --accent-2: #7b5cff;
+
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family: "Inter", sans-serif;
+
+    background: var(--light);
+
+    color: var(--black);
+
+    line-height: 1.6;
+
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    height: 76px;
+
+    padding: 0 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: rgba(8, 8, 8, 0.94);
+
+    backdrop-filter: blur(15px);
+
+    color: white;
+
+    border-bottom: 1px solid #222;
+
+}
+
+
+.logo {
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+.logo span {
+
+    display: block;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color: var(--accent);
+
+}
+
+
+.navbar nav {
+
+    display: flex;
+
+    gap: 28px;
+
+}
+
+
+.navbar nav a {
+
+    color: #bbb;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: .3s;
+
+}
+
+
+.navbar nav a:hover {
+
+    color: white;
+
+}
+
+
+.nav-button {
+
+    padding: 11px 19px;
+
+    border-radius: 50px;
+
+    background: var(--accent);
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+
+    min-height: calc(100vh - 76px);
+
+    padding: 80px 7%;
+
+    display: grid;
+
+    grid-template-columns: 1.1fr .9fr;
+
+    gap: 60px;
+
+    align-items: center;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(123,92,255,.25),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 30% 80%,
+            rgba(255,61,129,.15),
+            transparent 30%
+        ),
+
+        var(--black);
+
+    color: white;
+
+}
+
+
+.small-title {
+
+    color: var(--accent);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.hero h1 {
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: clamp(55px, 7vw, 95px);
+
+    line-height: .96;
+
+    letter-spacing: -3px;
+
+    max-width: 850px;
+
+}
+
+
+.hero h1 span {
+
+    display: block;
+
+    background: linear-gradient(
+        90deg,
+        var(--accent),
+        var(--accent-2)
+    );
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+}
+
+
+.hero-description {
+
+    max-width: 600px;
+
+    margin: 30px 0;
+
+    color: #aaa;
+
+    font-size: 17px;
+
+}
+
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.btn {
+
+    display: inline-block;
+
+    padding: 14px 23px;
+
+    border-radius: 50px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: .5px;
+
+    transition: .3s;
+
+}
+
+
+.btn:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+.primary {
+
+    background: var(--accent);
+
+    color: white;
+
+}
+
+
+.outline {
+
+    border: 1px solid #444;
+
+    color: white;
+
+}
+
+.hero-image {
+    position: relative;
+    height: 560px;
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 1px solid #333;
+    background: #111;
+}
+
+/* Actual Hero Image */
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    object-fit: cover;
+    object-position: center center;
+
+    border-radius: 30px;
+
+    transition: transform 0.5s ease;
+}
+
+/* Slight zoom on hover */
+
+.hero-image:hover img {
+    transform: scale(1.03);
+}
+
+
+/* Dark overlay */
+
+.hero-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0.05) 65%
+    );
+
+    pointer-events: none;
+}
+
+
+/* Hero information */
+
+.hero-tag {
+    position: absolute;
+
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+
+    padding: 18px 22px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    border-radius: 15px;
+
+    background: rgba(0, 0, 0, 0.82);
+
+    backdrop-filter: blur(12px);
+
+    color: white;
+
+    z-index: 2;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.hero-tag {
+    position: absolute;
+
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+
+    padding: 18px 22px;
+
+    border-radius: 15px;
+
+    background: rgba(0, 0, 0, 0.82);
+
+    backdrop-filter: blur(12px);
+
+    color: white;
+
+    z-index: 2;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-tag-text strong {
+    display: block;
+
+    color: var(--accent);
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    line-height: 1.3;
+}
+
+.hero-tag-text small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #bbb;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+/* 10+ YEARS */
+
+.hero-years {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+
+.hero-years strong {
+    color: var(--accent);
+
+    font-size: 32px;
+
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+
+.hero-years span {
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* PASSION TEXT */
+
+.hero-tag-text {
+    padding-left: 18px;
+
+    border-left: 1px solid #444;
+}
+
+
+.hero-tag-text small {
+    color: #bbb;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 600;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .hero-image {
+        height: 500px;
+        border-radius: 22px;
+    }
+
+    .hero-image img {
+        border-radius: 22px;
+        object-position: center;
+    }
+
+    .hero-tag {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        padding: 16px;
+    }
+
+}
+
+/* =========================================
+   STATS
+========================================= */
+
+.stats-section {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    background: #111;
+
+    color: white;
+
+}
+
+
+.stat {
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    border-right: 1px solid #292929;
+
+}
+
+
+.stat strong {
+
+    display: block;
+
+    font-size: 25px;
+
+    margin-bottom: 4px;
+
+}
+
+
+.stat span {
+
+    color: #777;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================
+   COMMON SECTION
+========================================= */
+
+.section {
+
+    padding: 110px 7%;
+
+}
+
+
+.section-label {
+
+    color: var(--accent);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.section h2 {
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: .98;
+
+    letter-spacing: -2px;
+
+}
+
+
+.section h2 span {
+
+    color: var(--accent);
+
+}
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about {
+
+    background: white;
+
+}
+
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    margin-top: 35px;
+
+}
+
+
+.about-text {
+
+    color: #555;
+
+    font-size: 17px;
+
+}
+
+
+.about-text p + p {
+
+    margin-top: 18px;
+
+}
+
+
+/* =========================================
+   STYLES
+========================================= */
+
+.styles {
+
+    background: var(--black);
+
+    color: white;
+
+}
+
+
+.style-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-top: 50px;
+
+}
+
+
+.style-card {
+
+    min-height: 270px;
+
+    padding: 30px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    background: var(--dark-card);
+
+    transition: .3s;
+
+}
+
+
+.style-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: var(--accent);
+
+}
+
+
+.number {
+
+    color: var(--accent);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+}
+
+
+.style-card h3 {
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: 30px;
+
+    margin-top: 60px;
+
+}
+
+
+.style-card p {
+
+    color: #999;
+
+    font-size: 14px;
+
+    margin-top: 10px;
+
+}
+
+
+/* =========================================
+   CLASSES
+========================================= */
+
+.classes {
+
+    background: #f2f2f2;
+
+}
+
+
+.classes-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    margin-top: 30px;
+
+}
+
+
+.classes-header p {
+
+    max-width: 550px;
+
+    color: #666;
+
+    margin-top: 20px;
+
+}
+
+
+.days {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+
+.days div {
+
+    width: 75px;
+
+    height: 75px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--black);
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+}
+
+
+.batch-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    margin-top: 50px;
+
+}
+
+
+.batch {
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    background: white;
+
+    border: 1px solid #ddd;
+
+}
+
+
+.batch h3 {
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: 32px;
+
+}
+
+
+.batch p {
+
+    color: #777;
+
+}
+
+
+.batch a {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    color: var(--accent);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+}
+
+
+/* =========================================
+   STUDENTS
+========================================= */
+
+.students {
+
+    background: white;
+
+}
+
+
+.student-grid {
+
+    display: grid;
+
+    grid-template-columns: .8fr 1.2fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    margin-top: 40px;
+
+}
+
+
+.student-image {
+
+    height: 500px;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+}
+
+
+.student-content > p {
+
+    color: #666;
+
+    max-width: 650px;
+
+    font-size: 17px;
+
+    margin-top: 20px;
+
+}
+
+
+.student-points {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 35px;
+
+}
+
+
+.student-points div {
+
+    border-top: 1px solid #ddd;
+
+    padding-top: 15px;
+
+}
+
+
+.student-points strong {
+
+    display: block;
+
+    color: var(--accent);
+
+}
+
+
+.student-points span {
+
+    font-size: 12px;
+
+    color: #777;
+
+}
+
+
+/* =========================================
+   REVIEWS
+========================================= */
+
+.reviews {
+
+    background: #eeeeee;
+
+}
+
+
+.reviews-heading {
+
+    display: flex;
+
+    align-items: end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+}
+
+
+.rating {
+
+    display: flex;
+
+    flex-direction: column;
+
+    text-align: right;
+
+}
+
+
+.rating strong {
+
+    font-size: 28px;
+
+}
+
+
+.rating span {
+
+    color: #777;
+
+    font-size: 11px;
+
+}
+
+
+.review-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 50px;
+
+}
+
+
+.review {
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background: white;
+
+}
+
+
+.stars {
+
+    color: #ffae00;
+
+    margin-bottom: 20px;
+
+}
+
+
+.review p {
+
+    color: #555;
+
+    min-height: 80px;
+
+}
+
+
+.review strong {
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================
+   GALLERY
+========================================= */
+
+.gallery {
+
+    background: white;
+
+}
+
+
+.gallery-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 45px;
+
+}
+
+
+.gallery-box {
+
+    aspect-ratio: 4 / 3;
+
+    border-radius: 18px;
+
+    background: #eeeeee;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #999;
+
+    font-weight: 800;
+
+}
+
+
+.gallery-note {
+
+    margin-top: 15px;
+
+    color: #888;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact {
+
+    padding: 110px 7%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    background: var(--black);
+
+    color: white;
+
+}
+
+
+.contact h2 span {
+
+    display: block;
+
+}
+
+
+.contact > div:first-child > p:last-child {
+
+    color: #888;
+
+    margin-top: 25px;
+
+}
+
+
+.contact-details {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    justify-content: center;
+
+}
+
+
+.contact-button {
+
+    padding: 18px 22px;
+
+    border: 1px solid #333;
+
+    border-radius: 12px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    transition: .3s;
+
+}
+
+
+.contact-button:hover {
+
+    border-color: var(--accent);
+
+    transform: translateX(5px);
+
+}
+
+
+.contact-button span {
+
+    float: right;
+
+    color: #888;
+
+    font-weight: 500;
+
+}
+
+
+.whatsapp {
+
+    background: var(--accent);
+
+    border-color: var(--accent);
+
+}
+
+
+.whatsapp span {
+
+    color: white;
+
+}
+
+
+.location {
+
+    margin-top: 15px;
+
+    color: #aaa;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    padding: 35px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    background: #050505;
+
+    color: white;
+
+}
+
+
+footer strong {
+
+    font-family: "Oswald", sans-serif;
+
+}
+
+
+footer p {
+
+    color: #777;
+
+    font-size: 11px;
+
+    margin-top: 5px;
+
+}
+
+
+/* =========================================
+   FLOATING WHATSAPP
+========================================= */
+
+.floating-whatsapp {
+
+    position: fixed;
+
+    right: 22px;
+
+    bottom: 22px;
+
+    z-index: 999;
+
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #25D366;
+
+    color: white;
+
+    font-size: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.3);
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .navbar nav {
+        display: none;
+    }
+
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+        padding-top: 70px;
+
+    }
+
+
+    .hero-image {
+
+        height: 450px;
+
+    }
+
+
+    .stats-section {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .stat {
+
+        border-bottom: 1px solid #292929;
+
+    }
+
+
+    .about-grid,
+    .student-grid,
+    .contact {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .style-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .review-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .gallery-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+
+        padding: 0 5%;
+
+    }
+
+
+    .nav-button {
+
+        padding: 9px 13px;
+
+        font-size: 10px;
+
+    }
+
+
+    .hero,
+    .section,
+    .contact {
+
+        padding-left: 5%;
+
+        padding-right: 5%;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 55px;
+
+    }
+
+
+    .hero-image {
+
+        height: 380px;
+
+    }
+
+
+    .stats-section {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .style-grid,
+    .batch-grid,
+    .gallery-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .classes-header,
+    .reviews-heading {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .rating {
+
+        text-align: left;
+
+    }
+
+
+    .student-points {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    footer {
+
+        flex-direction: column;
+
+        gap: 20px;
+
+    }
+
+}
+.student-image {
+    height: 500px;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.student-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+/* =========================================
+   MOVING REVIEWS
+========================================= */
+
+.reviews {
+    background: #eeeeee;
+    overflow: hidden;
+}
+
+.reviews-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.reviews-intro {
+    margin-top: 18px;
+    color: #777;
+    font-size: 15px;
+}
+
+.rating {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.rating strong {
+    display: block;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.rating span {
+    color: #777;
+    font-size: 12px;
+}
+
+
+/* REVIEW SLIDER */
+
+.reviews-slider {
+    width: 100vw;
+
+    margin-top: 55px;
+
+    margin-left: calc(50% - 50vw);
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+/* Moving track */
+
+.reviews-track {
+
+    display: flex;
+
+    width: max-content;
+
+    gap: 18px;
+
+    animation:
+        reviewsMove 45s linear infinite;
+}
+
+
+/* Pause when mouse is over reviews */
+
+.reviews-slider:hover .reviews-track {
+    animation-play-state: paused;
+}
+
+
+/* Individual review */
+
+.review-card {
+
+    width: 370px;
+
+    min-height: 260px;
+
+    flex-shrink: 0;
+
+    padding: 30px;
+
+    border-radius: 22px;
+
+    background: white;
+
+    border: 1px solid #e2e2e2;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.06);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+
+/* Stars */
+
+.review-stars {
+
+    color: #ffae00;
+
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Review text */
+
+.review-card p {
+
+    color: #444;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+/* Author */
+
+.review-author {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border-top: 1px solid #eeeeee;
+
+    padding-top: 18px;
+}
+
+
+.review-avatar {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #111;
+
+    color: white;
+
+    font-weight: 800;
+
+    font-size: 14px;
+}
+
+
+.review-author strong {
+
+    display: block;
+
+    font-size: 13px;
+
+    color: #111;
+}
+
+
+.review-author small {
+
+    display: block;
+
+    color: #999;
+
+    font-size: 10px;
+
+    margin-top: 2px;
+}
+
+
+/* Infinite movement */
+
+@keyframes reviewsMove {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* Bottom information */
+
+.reviews-bottom {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 35px;
+
+    color: #888;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+.reviews-bottom span:first-child {
+
+    color: #ffae00;
+
+    font-size: 15px;
+
+}
+
+
+/* =========================================
+   MOBILE REVIEWS
+========================================= */
+
+@media (max-width: 600px) {
+
+    .reviews-heading {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .rating {
+
+        text-align: left;
+
+    }
+
+
+    .review-card {
+
+        width: 310px;
+
+        min-height: 250px;
+
+        padding: 25px;
+
+    }
+
+
+    .reviews-track {
+
+        gap: 12px;
+
+        animation-duration: 35s;
+
+    }
+
+
+    .reviews-bottom {
+
+        flex-wrap: wrap;
+
+        padding: 0 20px;
+
+        text-align: center;
+
+    }
+
+}
+/* =========================================
+   10+ YEAR STUDENT STORY
+========================================= */
+
+.student-story {
+
+    padding: 110px 7%;
+
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    background: #080808;
+
+    color: white;
+
+    overflow: hidden;
+}
+
+
+/* PHOTO */
+
+.student-story-image {
+
+    position: relative;
+
+    height: 620px;
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    background: #111;
+
+}
+
+
+.student-story-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+
+}
+
+
+.student-story-image:hover img {
+
+    transform: scale(1.04);
+
+}
+
+
+/* DARK GRADIENT */
+
+.student-story-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.65),
+            transparent 50%
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* 10+ BADGE */
+
+.experience-badge {
+
+    position: absolute;
+
+    left: 25px;
+
+    bottom: 25px;
+
+    z-index: 2;
+
+    padding: 18px 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    border-radius: 15px;
+
+    background: rgba(0,0,0,.78);
+
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,.15);
+
+}
+
+
+.experience-badge strong {
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: 42px;
+
+    line-height: 1;
+
+    color: #ff3d81;
+
+}
+
+
+.experience-badge span {
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    line-height: 1.4;
+
+    letter-spacing: 1px;
+
+    color: #ddd;
+
+}
+
+
+/* CONTENT */
+
+.student-story-content {
+
+    max-width: 700px;
+
+}
+
+
+.student-story-content h2 {
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: clamp(50px, 6vw, 78px);
+
+    line-height: .95;
+
+    letter-spacing: -2px;
+
+}
+
+
+.student-story-content h2 span {
+
+    display: block;
+
+    color: #ff3d81;
+
+}
+
+
+.student-highlight {
+
+    margin-top: 30px;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    color: white;
+
+}
+
+
+.student-story-content > p:not(.student-highlight) {
+
+    margin-top: 18px;
+
+    color: #999;
+
+    font-size: 16px;
+
+    max-width: 620px;
+
+    line-height: 1.8;
+
+}
+
+
+/* POINTS */
+
+.student-story-points {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 40px;
+
+}
+
+
+.student-story-points div {
+
+    padding-top: 18px;
+
+    border-top: 1px solid #333;
+
+}
+
+
+.student-story-points strong {
+
+    display: block;
+
+    color: #ff3d81;
+
+    font-size: 20px;
+
+}
+
+
+.student-story-points span {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #777;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .student-story {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .student-story {
+
+        padding: 80px 5%;
+
+    }
+
+    .student-story-image {
+
+        height: 500px;
+
+    }
+
+    .student-story-points {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .experience-badge {
+
+        left: 15px;
+
+        bottom: 15px;
+
+    }
+
+}
+/* =========================================
+   10+ YEAR DANCE FAMILY
+========================================= */
+
+.ten-years {
+
+    padding: 110px 7%;
+
+    background: #080808;
+
+    color: white;
+
+    overflow: hidden;
+
+}
+
+
+.ten-years h2 {
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: clamp(50px, 6vw, 80px);
+
+    line-height: .95;
+
+    letter-spacing: -2px;
+
+}
+
+
+.ten-years h2 span {
+
+    color: #ff3d81;
+
+}
+
+
+.ten-years-intro {
+
+    max-width: 600px;
+
+    margin-top: 20px;
+
+    color: #888;
+
+    font-size: 16px;
+
+}
+
+
+/* STUDENT GRID */
+
+.ten-years-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-top: 55px;
+
+}
+
+
+/* CARD */
+
+.long-student {
+
+    background: #121212;
+
+    border: 1px solid #292929;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    transition: .4s ease;
+
+}
+
+
+.long-student:hover {
+
+    transform: translateY(-8px);
+
+    border-color: #ff3d81;
+
+}
+
+
+/* IMAGE */
+
+.long-student-image {
+
+    height: 390px;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.long-student-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition: transform .5s ease;
+
+}
+
+
+.long-student:hover img {
+
+    transform: scale(1.05);
+
+}
+
+
+/* 10+ BADGE */
+
+.long-student-image span {
+
+    position: absolute;
+
+    left: 15px;
+
+    bottom: 15px;
+
+    padding: 8px 12px;
+
+    border-radius: 50px;
+
+    background: #ff3d81;
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* INFO */
+
+.long-student-info {
+
+    padding: 22px;
+
+}
+
+
+.long-student-info h3 {
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: 25px;
+
+    letter-spacing: .5px;
+
+}
+
+
+.long-student-info p {
+
+    margin-top: 5px;
+
+    color: #777;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .ten-years-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .ten-years {
+
+        padding: 80px 5%;
+
+    }
+
+    .ten-years-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .long-student-image {
+
+        height: 450px;
+
+    }
+
+}
+@media (max-width: 600px) {
+
+    .hero-tag {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .hero-years strong {
+        font-size: 26px;
+    }
+
+    .hero-years span {
+        font-size: 9px;
+    }
+
+    .hero-tag-text {
+        padding-left: 12px;
+    }
+
+    .hero-tag-text small {
+        font-size: 9px;
+    }
+
+}
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 120px;
+    height: 65px;
+
+    object-fit: contain;
+
+    display: block;
+}
+/* =========================================
+   CLASS SCHEDULE / DANCE JOURNEY
+========================================= */
+
+.dance-schedule {
+    background: #080808;
+    padding: 120px 7%;
+    color: #fff;
+    overflow: hidden;
+}
+
+
+/* SECTION LABEL */
+
+.dance-schedule .section-label {
+    color: #ff3d81;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+
+/* MAIN HEADING */
+
+.dance-schedule h2 {
+    margin: 0;
+
+    font-size: clamp(52px, 7vw, 90px);
+    line-height: 0.95;
+
+    font-weight: 900;
+    letter-spacing: -3px;
+}
+
+.dance-schedule h2 span {
+    color: #ff3d81;
+}
+
+
+/* INTRO TEXT */
+
+.schedule-intro {
+    max-width: 650px;
+
+    margin-top: 25px;
+
+    color: #888;
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   DANCE JOURNEY
+========================================= */
+
+.dance-journey {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+    margin-top: 90px;
+}
+
+
+/* CONNECTING LINE */
+
+.journey-line {
+    position: absolute;
+
+    top: 34px;
+    left: 14%;
+    right: 14%;
+
+    height: 1px;
+
+    background: #333;
+
+    z-index: 0;
+}
+
+
+/* JOURNEY CARD */
+
+.journey-step {
+    position: relative;
+    z-index: 1;
+
+    text-align: center;
+
+    padding: 0 25px;
+}
+
+
+/* NUMBER CIRCLE */
+
+.journey-number {
+    width: 68px;
+    height: 68px;
+
+    margin: 0 auto 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #ff3d81;
+    border-radius: 50%;
+
+    background: #080808;
+
+    color: #ff3d81;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    transition: all 0.3s ease;
+}
+
+
+/* HOVER */
+
+.journey-step:hover .journey-number {
+    background: #ff3d81;
+    color: #fff;
+
+    transform: scale(1.08);
+}
+
+
+/* LEVEL NAME */
+
+.journey-step h3 {
+    margin: 0;
+
+    font-size: 27px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+
+/* DISCOVER / DEVELOP / PERFORM */
+
+.journey-step span {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    color: #ff3d81;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+/* DESCRIPTION */
+
+.journey-step p {
+    max-width: 300px;
+
+    margin: 18px auto 0;
+
+    color: #777;
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   LEVEL NOTE
+========================================= */
+
+.level-note {
+    width: fit-content;
+
+    margin: 70px auto 0;
+
+    padding: 12px 22px;
+
+    border: 1px solid #292929;
+    border-radius: 50px;
+
+    background: #101010;
+
+    color: #777;
+
+    font-size: 11px;
+
+    letter-spacing: 0.5px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   HOVER EFFECT
+========================================= */
+
+.journey-step {
+    transition: transform 0.3s ease;
+}
+
+.journey-step:hover {
+    transform: translateY(-8px);
+}
+
+.journey-step:hover h3 {
+    color: #ff3d81;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .dance-schedule {
+        padding: 90px 6%;
+    }
+
+    .dance-journey {
+        grid-template-columns: 1fr;
+        gap: 35px;
+
+        margin-top: 60px;
+    }
+
+    .journey-line {
+        display: none;
+    }
+
+    .journey-step {
+        padding: 35px 25px;
+
+        border: 1px solid #292929;
+        border-radius: 20px;
+
+        background: #101010;
+    }
+
+    .level-note {
+        margin-top: 45px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .dance-schedule {
+        padding: 75px 5%;
+    }
+
+    .dance-schedule h2 {
+        font-size: 50px;
+        letter-spacing: -2px;
+    }
+
+    .schedule-intro {
+        font-size: 13px;
+    }
+
+    .dance-journey {
+        margin-top: 50px;
+    }
+
+    .journey-step {
+        padding: 30px 20px;
+    }
+
+    .journey-step h3 {
+        font-size: 23px;
+    }
+
+    .level-note {
+        width: 100%;
+
+        box-sizing: border-box;
+
+        line-height: 1.6;
+
+        border-radius: 15px;
+    }
+
+}
+/* =========================================
+   STUDIO STATS
+========================================= */
+
+.studio-stats {
+    background: #080808;
+    padding: 110px 7%;
+    color: #fff;
+}
+
+.studio-stats h2 {
+    margin: 20px 0 0;
+
+    font-size: clamp(48px, 7vw, 85px);
+    line-height: .95;
+    letter-spacing: -3px;
+    font-weight: 900;
+}
+
+.studio-stats h2 span {
+    color: #ff3d81;
+}
+
+.stats-intro {
+    max-width: 600px;
+    margin-top: 25px;
+
+    color: #777;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* STATS GRID */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+
+    margin-top: 65px;
+}
+
+
+/* CARD */
+
+.stat-card {
+    position: relative;
+
+    padding: 40px 35px;
+
+    min-height: 230px;
+
+    border: 1px solid #292929;
+    border-radius: 22px;
+
+    background: #101010;
+
+    overflow: hidden;
+
+    transition: .3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-7px);
+    border-color: #ff3d81;
+}
+
+
+/* NUMBER */
+
+.stat-number {
+    font-size: clamp(55px, 6vw, 85px);
+
+    line-height: .9;
+
+    font-weight: 900;
+
+    letter-spacing: -3px;
+}
+
+.stat-number span {
+    color: #ff3d81;
+}
+
+
+/* TITLE */
+
+.stat-card h3 {
+    margin-top: 25px;
+
+    font-size: 14px;
+    letter-spacing: 1.5px;
+}
+
+
+/* DESCRIPTION */
+
+.stat-card p {
+    max-width: 280px;
+
+    margin-top: 12px;
+
+    color: #666;
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* PINK ACCENT */
+
+.stat-card::after {
+    content: "";
+
+    position: absolute;
+
+    right: -35px;
+    bottom: -35px;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background: #ff3d81;
+
+    opacity: .08;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .studio-stats {
+        padding: 80px 5%;
+    }
+
+    .studio-stats h2 {
+        font-size: 50px;
+    }
+
+    .stats-grid {
+        margin-top: 45px;
+    }
+
+    .stat-card {
+        padding: 32px 25px;
+    }
+
+}
+html {
+    scroll-behavior: smooth;
+}
+.age-counter-box {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.age-label {
+    display: block;
+    color: #ff3d81;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+.age-counter {
+    font-size: 70px;
+    line-height: 1;
+    font-weight: 900;
+    color: #080808;
+}
+
+.age-counter span:last-child {
+    color: #ff3d81;
+}
+
+.age-counter-box {
+    margin-top: 35px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.schedule-bottom {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 50px;
+    align-items: center;
+    margin-top: 55px;
+}
+
+.batch {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 24px;
+    padding: 50px 45px;
+}
+
+.batch h3 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.batch p {
+    margin: 10px 0 30px;
+    color: #777;
+}
+
+.batch a {
+    color: #ff3d81;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.age-counter-box {
+    text-align: center;
+}
+
+.age-label {
+    display: block;
+    color: #ff3d81;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.age-counter {
+    font-size: 80px;
+    line-height: 1;
+    font-weight: 900;
+    color: #080808;
+}
+
+.age-counter span:last-child {
+    color: #ff3d81;
+}
+
+.age-counter-box p {
+    margin-top: 10px;
+    color: #555;
+}
+.corporate-events {
+    background: #080808;
+    text-align: center;
+    padding: 120px 7%;
+    overflow: hidden;
+}
+
+.corporate-events .section-label {
+    color: #ff3d81;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+.corporate-events h2 {
+    margin: 0;
+    font-size: clamp(48px, 7vw, 90px);
+    line-height: .95;
+    font-weight: 900;
+    letter-spacing: -3px;
+    color: #fff;
+}
+
+.corporate-events h2 span {
+    color: #ff3d81;
+}
+
+.corporate-intro {
+    margin: 30px auto 65px;
+    color: #888;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.organization-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.organization-card {
+    width: 180px;
+    height: 150px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: #101010;
+    border: 1px solid #292929;
+    border-radius: 20px;
+
+    transition: all .3s ease;
+}
+
+.organization-card:hover {
+    transform: translateY(-8px);
+    border-color: #ff3d81;
+}
+
+.organization-card img {
+    width: 105px;
+    height: 75px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+.organization-card span {
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+@media (max-width: 600px) {
+
+    .corporate-events {
+        padding: 80px 5%;
+    }
+
+    .corporate-events h2 {
+        font-size: 48px;
+        letter-spacing: -2px;
+    }
+
+    .corporate-intro {
+        line-height: 1.8;
+        margin-bottom: 45px;
+    }
+
+    .organization-card {
+        width: 145px;
+        height: 135px;
+    }
+
+    .organization-card img {
+        width: 85px;
+        height: 60px;
+    }
+}
